@@ -3,148 +3,280 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>爆炸性流量，立刻見效</title>
+  <title>MSGSTAR | 炸群 群發 服務</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: #f2f2f2;
-      color: #333;
     }
-    .header {
-      background: linear-gradient(to right, #25D366, #4CAF50);
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: url('https://i.imgur.com/1V2F897.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      scroll-behavior: smooth;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      min-height: 100vh;
+      padding-bottom: 2rem;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 6rem 1rem 3rem 1rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #00ffe7;
+      text-shadow: 0 0 10px rgba(0, 255, 231, 0.6);
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+      color: #ccc;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .cta {
+      margin-top: 2rem;
+    }
+
+    .cta a {
+      background-color: #00bfa5;
       color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 2rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .cta a:hover {
+      background-color: #008f85;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: auto;
       padding: 4rem 1rem;
       text-align: center;
     }
-    .header h1 {
-      font-size: 3rem;
-      margin: 0;
-      font-weight: bold;
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #00e0c6;
     }
-    .header p {
-      margin-top: 1rem;
-      font-size: 1.5rem;
-      line-height: 1.6;
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
-    .services {
-      padding: 3rem 1rem;
-      background: white;
-      text-align: center;
-    }
-    .services h2 {
-      font-size: 2.5rem;
-      color: #4CAF50;
-      margin-bottom: 1.5rem;
-    }
-    .services p {
-      font-size: 1.2rem;
-      color: #555;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .services ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    .services ul li {
-      font-size: 1.1rem;
-      margin-bottom: 0.8rem;
-      text-align: left;
-    }
-    .service-image {
-      width: 100%;
-      max-width: 600px;
-      margin: 2rem 0;
-    }
-    .form-container {
-      background: white;
+
+    .feature-box {
+      background-color: rgba(255, 255, 255, 0.08);
       padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
-      margin: 2rem auto;
-    }
-    .form-container h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 0.8rem;
-      margin-top: 0.5rem;
-      border-radius: 0.5rem;
-      border: 1px solid #ccc;
-    }
-    button {
-      margin-top: 1.5rem;
-      width: 100%;
-      padding: 1rem;
-      background: #25D366;
-      color: white;
-      border: none;
-      border-radius: 0.5rem;
-      font-size: 1.1rem;
+      border-radius: 1.2rem;
+      box-shadow: 0 0 12px rgba(0, 255, 231, 0.2);
+      transition: transform 0.3s;
       cursor: pointer;
     }
+
+    .feature-box:hover {
+      transform: translateY(-8px);
+    }
+
+    .feature-box h3 {
+      font-size: 1.5rem;
+      color: #00ffe7;
+      margin-bottom: 1rem;
+    }
+
+    .feature-box p {
+      color: #ddd;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: 0 0 10px rgba(0, 255, 231, 0.15);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    form h2 {
+      color: #00e0c6;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-top: 1rem;
+      font-size: 1rem;
+      text-align: left;
+      color: #ccc;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.4rem;
+      border-radius: 0.6rem;
+      border: none;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      outline: none;
+    }
+
+    input:focus, textarea:focus {
+      box-shadow: 0 0 5px #00ffe7;
+    }
+
+    button {
+      background-color: #00bfa5;
+      color: white;
+      padding: 1rem;
+      width: 100%;
+      border: none;
+      border-radius: 0.6rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 2rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
     button:hover {
-      background: #1ebc57;
+      background-color: #008f85;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #aaa;
+      padding: 2rem 1rem;
+    }
+
+    @media (min-width: 600px) {
+      .features {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      .feature-box {
+        width: 45%;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="overlay">
+    <header>
+      <h1>MSGSTAR | 炸群群發</h1>
+      <p>我們擁有 WhatsApp群組1500+ 小紅書群組400+ 提供（炸群/私信群發)推廣服務，幫助你快速引爆流量、精準推送、迅速曝光</p>
+      <div class="cta">
+        <a href="https://wa.me/85261935534" target="_blank">立即聯絡我們</a>
+      </div>
+    </header>
 
-  <!-- 服務介紹頁面 -->
-  <header class="header">
-    <h1>流量暴增，立竿見影</h1>
-    <p>我們的炸群和群發服務，幫助您在最短的時間內獲得最大的流量，快速提升曝光度，立刻見效！</p>
-  </header>
+    <section class="section">
+      <h2>為什麼選擇我們的群發服務？</h2>
+      <div class="features">
+        <div class="feature-box">
+          <h3>快速見效</h3>
+          <p>即刻提升曝光率，流量引爆，立即提升產品曝光度</p>
+        </div>
+        <div class="feature-box">
+          <h3>精準觸達</h3>
+          <p>觸達超過 1900 個精準活躍用戶群，客戶質量高、轉化率強</p>
+        </div>
+        <div class="feature-box">
+          <h3>流量增長</h3>
+          <p>穩定的每日推送，幫助你的業務穩步增長，持續產生效益。</p>
+        </div>
+        <div class="feature-box">
+          <h3>高效轉化</h3>
+          <p>專業話術與群組策略輔助，讓你的銷售更高效</p>
+        </div>
+      </div>
+    </section>
 
-  <section class="services">
-    <h2>為什麼選擇我們？</h2>
-    <p>我們擁有多達 1500 個 WhatsApp 群組以及 400 個小紅書群組，透過這些渠道，我們能為您實現高效的群發服務，瞬間提升您的品牌曝光率，讓您的產品和服務迅速走紅！</p>
-    <ul>
-      <li>🚀 **立刻見效**：在短時間內，您的業務能夠得到飛躍性的增長。</li>
-      <li>🌍 **巨量流量**：依托超過 1900 個群組，瞬間觸達大量潛在客戶。</li>
-      <li>🔥 **爆炸性推廣**：高頻次、高曝光率的推廣方式，助您品牌走紅。</li>
-      <li>⚡ **高轉化率**：我們的服務不僅增加流量，還能有效提升轉化率。</li>
-    </ul>
-    <img src="https://via.placeholder.com/600x300.png?text=群發服務圖片" alt="群發服務" class="service-image" />
-  </section>
+    <section class="section" id="contact">
+      <form id="contact-form" action="https://formsubmit.co/ajax/msgstar.sender@gmail.com" method="POST">
+        <h2>聯絡我們</h2>
 
-  <!-- 聯絡表單 -->
-  <form class="form-container" action="https://formsubmit.co/msgstar.sender@gmail.com" method="POST">
-    <h2>馬上聯繫我們，開始您的流量增長之旅！</h2>
+        <label for="name">姓名 *</label>
+        <input type="text" name="姓名" id="name" required />
 
-    <label for="name">姓名 *</label>
-    <input type="text" name="姓名" id="name" required />
+        <label for="email">電郵 *</label>
+        <input type="email" name="電郵" id="email" required />
 
-    <label for="email">電郵 *</label>
-    <input type="email" name="電郵" id="email" required />
+        <label for="contact">聯繫方式（WhatsApp / Telegram）*</label>
+        <input type="text" name="聯繫方式" id="contact" required />
 
-    <label for="contact">聯繫方式（WhatsApp 或 Telegram）*</label>
-    <input type="text" name="聯繫方式" id="contact" required />
+        <label for="company">公司名稱（可選）</label>
+        <input type="text" name="公司名稱" id="company" />
 
-    <label for="company">公司名稱（可選）</label>
-    <input type="text" name="公司名稱" id="company" />
+        <label for="website">公司網站（可選）</label>
+        <input type="url" name="公司網站" id="website" />
+      
+        <input type="hidden" name="_captcha" value="false" />
 
-    <label for="website">網站（可選）</label>
-    <input type="url" name="網站" id="website" />
+        <button type="submit">提交表單</button>
+        <p id="response-message" style="margin-top: 1rem; color: #00ffe7; font-weight: bold;"></p>
+      </form>
+    </section>
 
-    <!-- 成功提交後跳轉 -->
-    <input type="hidden" name="_next" value="https://wa.me/85261935534">
-    <!-- 防垃圾機制 -->
-    <input type="hidden" name="_captcha" value="false" />
+    <footer>
+      &copy; 2025 MSGSTAR | Powered by MSGSTAR 團隊
+    </footer>
+  </div>
 
-    <button type="submit">提交表單</button>
-  </form>
+  <script>
+    const form = document.getElementById('contact-form');
+    const responseMessage = document.getElementById('response-message');
 
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          form.reset();
+          responseMessage.innerText = "✅ 表單已成功送出，我們會很快聯繫您！";
+        } else {
+          responseMessage.innerText = "⚠️ 表單送出失敗，請稍後再試一次。";
+        }
+      }).catch(error => {
+        responseMessage.innerText = "❌ 網路發生錯誤，請稍後再試。";
+      });
+    });
+  </script>
 </body>
 </html>
